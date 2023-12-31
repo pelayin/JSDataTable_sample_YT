@@ -1,0 +1,91 @@
+{% extends './base.html' %}
+{% block title %}Ejemplo1 {% endblock %}
+{% block body %}
+
+<!-- Contenedor principal -->
+    <!-- Div centrado con color llamativo y título -->
+    <div class="text-center bg-primary text-white  ">
+            <!-- Reducir el tamaño del título al 50% -->
+            <h1 class="display-5">Ejemplo 2 Barra Progreso, formatear columnas</h1>
+    </div>
+ <div class="row">
+     <div class="col-sm-12">
+         <table id="table_id" class="display" style="width:100%">
+             <thead>
+
+             <tr>
+                 <th>Total</th>
+                  <th>Nombres</th>
+                  <th>Porcentaje_Ventas</th>
+                  <th>Conteo_Ventas</th>
+                 <th>Total</th>
+             </tr>
+             </thead>
+             {% for row in customerranking %}
+             <tr>
+                 <td>{{ row.Total  }}</td>
+                 <td>{{ row.NOMBRES  }}</td>
+                 <td>{{ row.Porcentaje_Ventas  }}</td>
+                 <td>{{ row.Conteo_Ventas  }}</td>
+                 <td>{{ row.GranTot  }}</td>
+             </tr>
+             {% endfor %}
+
+         </table>
+
+            </div>
+     </div>
+<script>
+    $(document)
+    .ready(function () {
+        $('#table_id')
+        .DataTable({
+            columns:[
+                {
+                    data:'Total'
+                },
+                {
+                    data:'Nombres'
+                },
+                {
+                    data: 'Porcentaje_Ventas',
+                    render :function(data, type, row, meta){
+                        return type == 'display'
+                        ? '<progress value= "' + data + '" max= "' + row.Total + '"></progress>'
+                        :data;
+                    }
+                },
+                {
+                    data:'Conteo_Ventas'
+                },
+                {
+                    data: 'GranTot',
+                    render: function (data, type){
+                        var number = DataTable.render
+                            .number(',','.',2,'S/ ')
+                            .display(data);
+                      if (type === 'display'){
+                        let color = 'green';
+                        if (data < 250){
+                            color = 'red';
+                        }
+                        else if (data < 500){
+                            color ='orange';
+                        }
+                        else if (data < 1000){
+                            color ='green';
+                        }
+                        return  `<span style="color:${color}">${number}</span>`;
+
+                      }
+                    return number;
+                    }
+                }
+           ]
+
+        }
+      );
+    });
+</script>
+
+{% endblock %}
