@@ -21,6 +21,9 @@
     <!-- DataTables JavaScript -->
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
 
+      <!-- DataTables JavaScript rowgroup -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/rowgroup/1.4.1/js/dataTables.rowGroup.min.js"></script>
+
 </head>
 
 <body>
@@ -37,8 +40,17 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{{ url_for('datatable_bp.get_items') }}">Ejemplo 1</a>
         </li>
+
          <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{{ url_for('datatable_bp.get_customerranking') }}">Ejemplo 2</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{ url_for('datatable_bp.get_productbrands') }}">Ejemplo 3</a>
+        </li>
+
+         <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{ url_for('datatable_bp.get_productsDataSource') }}">Ejemplo 4</a>
         </li>
 
       </ul>
