@@ -1,0 +1,121 @@
+{% extends './base.html' %}
+{% block title %}Ejemplo1 {% endblock %}
+{% block body %}
+
+<!-- Contenedor principal -->
+    <!-- Div centrado con color llamativo y título -->
+    <div class="text-center bg-primary text-white  ">
+            <!-- Reducir el tamaño del título al 50% -->
+            <h1 class="display-5">Ejemplo 5 Mostrar Botón Impresión</h1>
+    </div>
+ <div class="row">
+     <div class="col-sm-12">
+         <table id="table_id" class="display" style="width:100%">
+             <thead>
+             <tr>
+                 <th>ProductName</th>
+                  <th>Brand</th>
+                  <th>Manufacturer</th>
+                    <th>Family</th>
+                  <th>Height</th>
+                  <th>Unit_Measure</th>
+                  <th>Stock</th>
+
+             </tr>
+             </thead>
+             {% for row in printingProductList %}
+             <tr>
+                 <td>{{ row.ProductName  }}</td>
+                 <td>{{ row.Brand  }}</td>
+                 <td>{{ row.Manufacturer  }}</td>
+                 <td>{{ row.Family  }}</td>
+                 <td>{{ row.Height  }}</td>
+                 <td>{{ row.Unit_Measure  }}</td>
+                 <td>{{ row.Stock  }}</td>
+
+             </tr>
+             {% endfor %}
+
+         </table>
+
+            </div>
+     </div>
+<script>
+//Parte uno boton impresión
+/*
+    $(document)
+    .ready(function () {
+        $('#table_id')
+        .DataTable({
+            dom: 'Brftip',
+            buttons:[
+                'print'
+            ]
+
+        } );
+    });
+*/
+/*
+     //Parte dos boton impresión
+
+        $(document).ready(function () {
+        $('#table_id').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+            {
+                extend:'print',
+                messageTop: 'Si necesita imprimir, recicla papel. Es un recurso renovable.'
+            }
+
+            ]
+
+        } );
+    });
+*/
+//Parte tres boton impresion (colvis) por selección de columnas.
+/*
+        $(document).ready(function () {
+        $('#table_id').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+            {
+                 extend: 'print',
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },
+              'colvis'
+            ],
+            columnDefs: [{
+                targets: -1,
+                visible: false
+            } ]
+
+        } );
+    });
+    */
+
+            $(document).ready(function () {
+        $('#table_id').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+            {
+                 extend: 'print',
+                   customize : function(win){
+                       $(win.document.body)
+                       .css('font-size','10pt')
+                       .prepend(
+                        '<img src="https://programacion.net/files/article/20151127011102_watermark.png", style="position:fixed;top:20%;right:20%;"/>'
+
+                       );
+                       $(win.document.body).find('table')
+                       .addClass('compact')
+                       .css('font-size','inherit');
+                   }
+            } ]
+        } );
+    });
+
+</script>
+
+{% endblock %}

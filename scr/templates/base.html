@@ -17,12 +17,36 @@
 
     <!-- DataTables CSS -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css">
+        <!-- DataTables CSS para button-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
 
     <!-- DataTables JavaScript -->
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
 
+
       <!-- DataTables JavaScript rowgroup -->
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/rowgroup/1.4.1/js/dataTables.rowGroup.min.js"></script>
+
+         <!---DataTables JavaScript  button Ejemplo 5 -->
+    <script type="text/javascript" charset="utf8" src=https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js></script>
+        <!---DataTables JavaScript Print button Ejemplo 5 -->
+    <script type="text/javascript" charset="utf8" src=https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js></script>
+
+    <!---DataTables JavaScript Boton colVis, opcion para columnas visible a travez de un button Ejemplo 5 -->
+    <script type="text/javascript" charset="utf8" src=https://cdn.datatables.net/buttons/2.4.2/js/buttons.colVis.min.js></script>
+
+
+     <!---DataTables : libreria JavaScript permite crear, leer y editar archivos zip Ejemplo 6 -->
+  <script type="text/javascript" charset="utf8" src=https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js></script>
+
+<!---DataTables : libreria JavaScript permite crer archivos PDF Ejemplo 6 -->
+  <script type="text/javascript" charset="utf8" src=https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js></script>
+
+    <!---DataTables : libreria JavaScript para tipo de letras  exportacion de PDF Ejemplo 6 -->
+  <script type="text/javascript" charset="utf8" src=https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js></script>
+
+    <!---DataTables : libreria JavaScript para boton HTML5 de exportación Ejemplo 6 -->
+  <script type="text/javascript" charset="utf8" src=https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js></script>
 
 </head>
 
@@ -52,6 +76,12 @@
          <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{{ url_for('datatable_bp.get_productsDataSource') }}">Ejemplo 4</a>
         </li>
+          <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{ url_for('datatable_bp.get_printingProductList') }}">Ejemplo 5</a>
+         </li>
+         <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{ url_for('datatable_bp.get_exportProductList') }}">Ejemplo 6</a>
+         </li>
 
       </ul>
 

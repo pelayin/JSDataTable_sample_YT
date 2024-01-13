@@ -3,6 +3,9 @@ from scr.models.ejemplo1 import ejemplo1
 from scr.models.ejemplo2 import ejemplo2
 from scr.models.ejemplo3 import ejemplo3
 from scr.models.ejemplo4 import ejemplo4
+from scr.models.ejemplo5 import ejemplo5
+from scr.models.ejemplo6 import ejemplo6
+
 main = Blueprint('datatable_bp', __name__)
 
 
@@ -30,3 +33,15 @@ def get_productsDataSource():
     productsDS= ejemplo4.get_productsDataSource()
 
     return render_template('/ejemplo4.html', productsDS=productsDS)
+
+@main.route('/ejemplo5')
+def get_printingProductList():
+    printingProductList= ejemplo5.get_printingProductList()
+
+    return render_template('/ejemplo5.html', printingProductList=printingProductList)
+
+@main.route('/ejemplo6')
+def get_exportProductList():
+    exportProductList= ejemplo6.get_exportProductList()
+
+    return render_template('/ejemplo6.html', exportProductList=exportProductList)
