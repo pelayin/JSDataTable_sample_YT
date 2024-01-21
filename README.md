@@ -28,6 +28,8 @@ Librería para asignar fuentes en la creación del PDF
 Librería para mostrar los botones en versión HTML5 parte de la exportación.
 <script type="text/javascript" charset="utf8" src=https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js></script>
 
+![Video_DataTableJS_ejemplo7 8](https://github.com/mectoys/JSDataTable_sample_YT/assets/7143758/c2906f0e-3bdb-4329-9333-264dc7bbd11a)
+¡Bienvenido a esta cuarta entrega de DataTables en acción! 🚀 En este tutorial, exploraremos dos funcionalidades poderosas: Search Builder para búsquedas avanzadas y un mini CRUD para la gestión de datos usando funcionalidades de DataTables. Desde la construcción de consultas personalizadas hasta la adición, edición y eliminación de filas, aprenderás a implementar estas funciones en tus proyectos web utilizando Python, Flask y DataTables. ¿Listo para llevar tu desarrollo web al siguiente nivel? ¡Vamos a hacerlo! 💻✨
 
 ![Video_DataTableJS_ejemplo5 6](https://github.com/mectoys/JSDataTable_sample_YT/assets/7143758/e5b48ec9-1b48-468f-937c-324d9c65cd43)
 Bienvenido a otro emocionante tutorial en mi canal! 🚀 En este tercer video, te sumergirás en las potentes capacidades de DataTables, explorando la vista previa, impresión y exportación de datos en tus proyectos web. Aprenderemos a personalizar la vista previa con etiquetas y fondos, y exploraremos la exportación a CSV, EXCEL, PDF y más. ¿Listo para dar un salto cualitativo en tu desarrollo web? ¡Vamos a hacerlo juntos! 💻✨
