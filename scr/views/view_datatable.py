@@ -5,6 +5,8 @@ from scr.models.ejemplo3 import ejemplo3
 from scr.models.ejemplo4 import ejemplo4
 from scr.models.ejemplo5 import ejemplo5
 from scr.models.ejemplo6 import ejemplo6
+from scr.models.ejemplo7 import ejemplo7
+
 
 main = Blueprint('datatable_bp', __name__)
 
@@ -45,3 +47,14 @@ def get_exportProductList():
     exportProductList= ejemplo6.get_exportProductList()
 
     return render_template('/ejemplo6.html', exportProductList=exportProductList)
+
+@main.route('/ejemplo7')
+def get_searchBuilderProductList():
+    searchBuilderProductList= ejemplo7.get_searchBuilderProductList()
+
+    return render_template('/ejemplo7.html', searchBuilderProductList=searchBuilderProductList)
+
+@main.route('/ejemplo8')
+def get_MiniCrudDataTable():
+
+    return render_template('/ejemplo8.html')

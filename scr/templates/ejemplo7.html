@@ -1,12 +1,12 @@
 {% extends './base.html' %}
-{% block title %}Ejemplo1¿6 {% endblock %}
+{% block title %}Ejemplo7 {% endblock %}
 {% block body %}
 
 <!-- Contenedor principal -->
     <!-- Div centrado con color llamativo y título -->
     <div class="text-center bg-primary text-white  ">
             <!-- Reducir el tamaño del título al 50% -->
-            <h1 class="display-5">Ejemplo 6 Exportación</h1>
+            <h1 class="display-5">Ejemplo 7 Search Builder</h1>
     </div>
  <div class="row">
      <div class="col-sm-12">
@@ -23,7 +23,7 @@
 
              </tr>
              </thead>
-             {% for row in exportProductList %}
+             {% for row in searchBuilderProductList %}
              <tr>
                  <td>{{ row.ProductName  }}</td>
                  <td>{{ row.Brand  }}</td>
@@ -44,8 +44,7 @@
 
      $(document).ready(function () {
         $('#table_id').DataTable({
-            dom: 'Bfrtip',
-            buttons: [ 'copy', 'csv', 'excel','pdf','print']
+           dom: 'Qfrtip'
         } );
     });
 </script>
