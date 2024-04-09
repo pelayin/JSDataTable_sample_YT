@@ -1,1 +1,9 @@
+.gitignore
 /parameters.env
+venv/
+.vscode/
+dist/
+*.pyc
+*.egg-info/
+*.egg
+__pycache__/

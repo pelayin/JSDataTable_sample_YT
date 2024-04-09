@@ -1,4 +1,4 @@
-Librerias para iniciar DataTable
+Librerías para iniciar DataTable
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css">
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
@@ -10,10 +10,10 @@ Librería para usar ROWGROUP
 Librería para usar Botones personalizados
 <script type="text/javascript" charset="utf8" src=https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js></script>
 
-Librería para usar Boton de impresión
+Librería para usar Botón de impresión
 <script type="text/javascript" charset="utf8" src=https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js></script>
 
-Librería para usar Boton para  selección de las columnas del DataTable
+Librería para usar Botón para  selección de las columnas del DataTable
 <script type="text/javascript" charset="utf8" src=https://cdn.datatables.net/buttons/2.4.2/js/buttons.colVis.min.js></script>
 
 Librería para crear, leer y editar archivos zip

@@ -8,53 +8,61 @@ from scr.models.ejemplo6 import ejemplo6
 from scr.models.ejemplo7 import ejemplo7
 
 
-main = Blueprint('datatable_bp', __name__)
+main = Blueprint("datatable_bp", __name__)
 
 
-@main.route('/ejemplo1')
+@main.route("/ejemplo1")
 def get_items():
     Items = ejemplo1.get_items()
     print(Items)
-    return render_template('/ejemplo1.html', Items=Items)
+    return render_template("/ejemplo1.html", Items=Items)
 
 
-@main.route('/ejemplo2')
+@main.route("/ejemplo2")
 def get_customerranking():
     customerranking = ejemplo2.get_customerranking()
 
-    return render_template('/ejemplo2.html', customerranking=customerranking)
+    return render_template("/ejemplo2.html", customerranking=customerranking)
 
-@main.route('/ejemplo3')
+
+@main.route("/ejemplo3")
 def get_productbrands():
     productbrands = ejemplo3.get_productbrands()
 
-    return render_template('/ejemplo3.html', productbrands=productbrands)
+    return render_template("/ejemplo3.html", productbrands=productbrands)
 
-@main.route('/ejemplo4')
+
+@main.route("/ejemplo4")
 def get_productsDataSource():
-    productsDS= ejemplo4.get_productsDataSource()
+    productsDS = ejemplo4.get_productsDataSource()
 
-    return render_template('/ejemplo4.html', productsDS=productsDS)
+    return render_template("/ejemplo4.html", productsDS=productsDS)
 
-@main.route('/ejemplo5')
+
+@main.route("/ejemplo5")
 def get_printingProductList():
-    printingProductList= ejemplo5.get_printingProductList()
+    printingProductList = ejemplo5.get_printingProductList()
 
-    return render_template('/ejemplo5.html', printingProductList=printingProductList)
+    return render_template("/ejemplo5.html", printingProductList=printingProductList)
 
-@main.route('/ejemplo6')
+
+@main.route("/ejemplo6")
 def get_exportProductList():
-    exportProductList= ejemplo6.get_exportProductList()
+    exportProductList = ejemplo6.get_exportProductList()
 
-    return render_template('/ejemplo6.html', exportProductList=exportProductList)
+    return render_template("/ejemplo6.html", exportProductList=exportProductList)
 
-@main.route('/ejemplo7')
+
+@main.route("/ejemplo7")
 def get_searchBuilderProductList():
-    searchBuilderProductList= ejemplo7.get_searchBuilderProductList()
+    searchBuilderProductList = ejemplo7.get_searchBuilderProductList()
 
-    return render_template('/ejemplo7.html', searchBuilderProductList=searchBuilderProductList)
+    return render_template(
+        "/ejemplo7.html", searchBuilderProductList=searchBuilderProductList
+    )
 
-@main.route('/ejemplo8')
+
+@main.route("/ejemplo8")
 def get_MiniCrudDataTable():
 
-    return render_template('/ejemplo8.html')
+    return render_template("/ejemplo8.html")

@@ -3,102 +3,102 @@
 {% block body %}
 
 <!-- Contenedor principal -->
-    <!-- Div centrado con color llamativo y título -->
-    <div class="text-center bg-primary text-white  ">
-            <!-- Reducir el tamaño del título al 50% -->
-            <h1 class="display-5">Ejemplo 8 MINI CRUD DATATABLE</h1>
-    </div>
+<!-- Div centrado con color llamativo y título -->
+<div class="text-center bg-primary text-white  ">
+    <!-- Reducir el tamaño del título al 50% -->
+    <h1 class="display-5">Ejemplo 8 MINI CRUD DATATABLE</h1>
+</div>
 
 <div class="row">
     <div class="col-md-3 mb-3">
-      <label for="txtName" class="form-label" >Producto Name:</label>
-      <input type="text" class="form-control" id="txtName">
+        <label for="txtName" class="form-label">Producto Name:</label>
+        <input type="text" class="form-control" id="txtName">
     </div>
 
-      <div class="col-md-3 mb-3">
-        <label for="txtStock" class="form-label" >Stock:</label>
+    <div class="col-md-3 mb-3">
+        <label for="txtStock" class="form-label">Stock:</label>
         <input type="text" class="form-control" id="txtStock">
     </div>
 </div>
 
 <div class="row">
     <div class="col-md-3 mb-3">
-      <button id="addRow" class="btn btn-primary mr-2">Agregar</button>
-      <button id="editRow" class="btn btn-primary mr-2">Editar</button>
-      <button id="delRow" class="btn btn-primary mr-2">Remover</button>
+        <button id="addRow" class="btn btn-primary mr-2">Agregar</button>
+        <button id="editRow" class="btn btn-primary mr-2">Editar</button>
+        <button id="delRow" class="btn btn-primary mr-2">Remover</button>
     </div>
 </div>
 
- <div class="row">
-     <div class="col-sm-12">
-         <table id="table_id" class="display" style="width:100%">
-             <thead>
-             <tr>
-                 <th>Product Name</th>
-                  <th>Stock</th>
-             </tr>
-             <tbody>
+<div class="row">
+    <div class="col-sm-12">
+        <table id="table_id" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Stock</th>
+                </tr>
+            <tbody>
 
-             </tbody>
-             </thead>
+            </tbody>
+            </thead>
 
 
-         </table>
+        </table>
 
-            </div>
-     </div>
+    </div>
+</div>
 <script>
 
-     $(document).ready(function () {
-       var table= $('#table_id').DataTable({
-            ordering:false
+    $(document).ready(function () {
+        var table = $('#table_id').DataTable({
+            ordering: false
 
-        } );
-         txtStock
-        var txtName= $('#txtName');
-        var txtStock =$('#txtStock');
+        });
+        txtStock
+        var txtName = $('#txtName');
+        var txtStock = $('#txtStock');
 
-        $('#table_id tbody').on('click','tr',function(){
-          if ($(this).hasClass('selected')){
-              $(this).removeClass('selected');
-          }
-          else{
-             table.$('tr.selected').removeClass('selected');
-             $(this).addClass('selected');
-             var data = table.row(this).data();
-             txtName.val(data[0]);
-             txtStock.val(data[1]);
-          }
+        $('#table_id tbody').on('click', 'tr', function () {
+            if ($(this).hasClass('selected')) {
+                $(this).removeClass('selected');
+            }
+            else {
+                table.$('tr.selected').removeClass('selected');
+                $(this).addClass('selected');
+                var data = table.row(this).data();
+                txtName.val(data[0]);
+                txtStock.val(data[1]);
+            }
         });
 
 
-        $('#addRow').on('click',function (){
+        $('#addRow').on('click', function () {
             var newName = txtName.val()
             var newStock = txtStock.val()
-            table.row.add([newName,newStock]).draw();
+            table.row.add([newName, newStock]).draw();
 
             ClearText();
         });
 
-        $('#editRow').on('click',function (){
+        $('#editRow').on('click', function () {
             var newName = txtName.val()
             var newStock = txtStock.val()
             var selectedRow = table.row('.selected');
 
-            if(selectedRow.any()){
-                selectedRow.data([newName,newStock]).draw();
+            if (selectedRow.any()) {
+                selectedRow.data([newName, newStock]).draw();
 
                 ClearText();
             }
         });
 
-        $('#delRow').on('click',function (){
+        $('#delRow').on('click', function () {
             table.row('.selected').remove().draw();
 
         });
-        function ClearText(){
-             txtName.val("")
-             txtStock.val("")
+        function ClearText() {
+            txtName.val("")
+            txtStock.val("")
         }
     });
 </script>
